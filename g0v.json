@@ -1,0 +1,43 @@
+{
+  "author": "billy3321",
+  "contributors": [
+    "joy hsu",
+    "kris chu"
+  ],
+  "status": "beta",
+  "name": "ly-tel",
+  "name_zh": "立委聯絡資料",
+  "description": "Public participation in tele-form",
+  "description_zh": "話筒式的公共參與",
+  "homepage": "http://billy3321.github.io/lytel/",
+  "document": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/g0v/ly-tel"
+  },
+  "licenses": [
+    {
+      "type": "Apache v2"
+    }
+  ],
+  "keywords": [
+    "javascript",
+    "jquery",
+    "css"
+  ],
+  "audience": [
+    "public"
+  ],
+  "products": [
+    "website"
+  ],
+  "projects": [
+    "ly"
+  ],
+  "thumbnail": "http://billy3321.github.io/lytel/banner_s.jpg",
+  "needs": [
+    "designer",
+    "programmer",
+    "writer"
+  ]
+}
