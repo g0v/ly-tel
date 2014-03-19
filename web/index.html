@@ -28,12 +28,14 @@
 <table width="100%" class="contact-list" id="contact-list">
   <tr>
     <th width="8%"><b>頭像</b></th>
-    <th width="12%"><b>姓名</b></th>
-    <th width="14%"><b>政黨</b></th>
-    <th width="16%"><b>選區</b></th>
+    <th width="12%" id="name"><b>姓名</b></th>
+    <th width="14%" id="party"><b>政黨</b></th>
+    <th width="16%" id="constituency"><b>選區</b></th>
     <th width="50%"><b>聯絡資料</b></th>
   </tr>
-  
+    <tbody id="results">
+        <!-- this will be auto-populated -->
+    </tbody>
   </table>
   <div class="copyright">
   本網頁授權條款為 Apache v2.0，原始碼請<a href="https://github.com/g0v/ly-tel">在此下載</a>。原始數據來源<a href="https://github.com/g0v/twlyparser/blob/master/data/mly-8.json">在此下載</a>。

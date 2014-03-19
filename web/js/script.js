@@ -1,5 +1,7 @@
 //var url = "https://raw.github.com/g0v/twlyparser/master/data/mly-8.json";
+//sortable table solution: http://jsfiddle.net/VAKrE/105/
 var url = "data/mly-8.json";
+var data_cache = undefined;
 
 iso3166tw = {
     "CHA": "彰化縣",
@@ -82,12 +84,35 @@ var party_parser = function (party) {
     }
 };
 
+function sortResults(prop, asc) {
+    data_cache = data_cache.sort(function(a, b) {
+        if (asc) return (a[prop] > b[prop]);
+        else return (b[prop] > a[prop]);
+    });
+    showResults();
+}
 
+$(function() {
+    $('#contact-list th').click(function() {
+        var id = $(this).attr('id');
+        var asc = (!$(this).attr('asc')); // switch the order, true if not set
+        
+        // set asc="asc" when sorted in ascending order
+        $('#contact-list th').each(function() {
+            $(this).removeAttr('asc');
+        });
+        if (asc) $(this).attr('asc', 'asc');
+        
+        sortResults(id, asc);
+    });
+        
+    //showResults();
+});
 
-$.getJSON(url, function (data) {
-    //console.log(data);
+function showResults(){
+    $('#results').html('');
     var num = 0;
-    $.each(data, function (key, val) {
+    $.each(data_cache, function (key, val) {
         if ((num % 2) == 0) {
             var html = '<tr>';
         } else {
@@ -118,6 +143,13 @@ $.getJSON(url, function (data) {
         html = html + '</td><tr>';
         num = num + 1;
         //console.log(html);
-        $('#contact-list').append(html);
+        $('#results').append(html);
     });
+
+}
+
+$.getJSON(url, function (data) {
+    //console.log(data);
+    data_cache=data;
+    showResults();
 });
