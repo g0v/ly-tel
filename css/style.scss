@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import 'sidebar';
 @import 'var';
 /* CSS Document */
 /*reset*/
@@ -66,6 +67,9 @@ line-height:1.4em;
 }
 #topbar .logo {
   font-size: 30px;
+  @media only screen and (max-width: 760px){
+    font-size: 25px;
+  }
   line-height: 1;
   letter-spacing: 1px;
   text-decoration: none;
@@ -113,52 +117,13 @@ line-height:1.4em;
   border-radius: 3px;
 }
 
-/* side bar */
-
-.sidebar {
-  margin-left: 42px;
-  margin-top: 20px;
-  float: left;
-  display: inline-block;
-  text-decoration: none;
-}
-.sidebar ul {
-  margin-bottom: 21px;
-}
-.sidebar li.title {
-  font-size: 18px;
-  padding-bottom: 3px;
-}
-.sidebar li.title .small {
-  font-size: 15px;
-  padding-left: 5px;
-}
-.sidebar li {
-  list-style-type: none;
-  font-size: 16px;
-}
-.sidebar li a {
-  color: black;
-}
-.sidebar li a:hover {
-  text-decoration: none;
-  color: red;
-}
-.sidebar li:not(.title) {
-  margin-left: 7px;
-  padding-top: 3px;
-}
-
-.sidebar.affix{
-  top: 0;
-}
-
 /* main */
 
 #main {
-  margin-top: 3em;
+
   @media only screen and (min-width: 760px){
     padding-left: 28em;
+    margin-top: 3em;
   }
   // width: 51em;
 }

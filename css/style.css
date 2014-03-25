@@ -1,3 +1,52 @@
+/* side bar */
+@media only screen and (max-width: 760px) {
+  ul#links {
+    background-color: yellow; } }
+
+.sidebar {
+  margin-left: 42px;
+  margin-top: 20px;
+  float: left;
+  display: inline-block;
+  text-decoration: none; }
+  @media only screen and (max-width: 760px) {
+    .sidebar {
+      display: inline;
+      position: none;
+      top: 1px;
+      right: 0px;
+      float: none; } }
+
+.sidebar ul {
+  margin-bottom: 21px; }
+
+.sidebar li.title {
+  font-size: 18px;
+  padding-bottom: 3px;
+  padding-top: 9px; }
+
+.sidebar li.title .small {
+  font-size: 15px;
+  padding-left: 5px; }
+
+.sidebar li {
+  list-style-type: none;
+  font-size: 16px; }
+
+.sidebar li a {
+  color: black; }
+
+.sidebar li a:hover {
+  text-decoration: none;
+  color: red; }
+
+.sidebar li:not(.title) {
+  margin-left: 7px;
+  padding-top: 3px; }
+
+.sidebar.affix {
+  top: 0; }
+
 .centered {
   float: none;
   margin: 0 auto; }
@@ -68,6 +117,9 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
   letter-spacing: 1px;
   text-decoration: none;
   color: #FFF; }
+  @media only screen and (max-width: 760px) {
+    #topbar .logo {
+      font-size: 25px; } }
 
 #topbar .logo:hover {
   color: #878585; }
@@ -110,49 +162,11 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
   border: 1px solid rgba(217, 83, 79, 0.4);
   border-radius: 3px; }
 
-/* side bar */
-.sidebar {
-  margin-left: 42px;
-  margin-top: 20px;
-  float: left;
-  display: inline-block;
-  text-decoration: none; }
-
-.sidebar ul {
-  margin-bottom: 21px; }
-
-.sidebar li.title {
-  font-size: 18px;
-  padding-bottom: 3px; }
-
-.sidebar li.title .small {
-  font-size: 15px;
-  padding-left: 5px; }
-
-.sidebar li {
-  list-style-type: none;
-  font-size: 16px; }
-
-.sidebar li a {
-  color: black; }
-
-.sidebar li a:hover {
-  text-decoration: none;
-  color: red; }
-
-.sidebar li:not(.title) {
-  margin-left: 7px;
-  padding-top: 3px; }
-
-.sidebar.affix {
-  top: 0; }
-
 /* main */
-#main {
-  margin-top: 3em; }
-  @media only screen and (min-width: 760px) {
-    #main {
-      padding-left: 28em; } }
+@media only screen and (min-width: 760px) {
+  #main {
+    padding-left: 28em;
+    margin-top: 3em; } }
 
 /*main .head {
   font-size: 50px;
