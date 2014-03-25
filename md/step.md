@@ -40,6 +40,6 @@ Xxx立委您好，我是您選區的選民。打電話來表達意見。
 
 [https://docs.google.com/file/d/0B6meUyeFIFA8N2VaX3FvNWYzWlU/edit](https://docs.google.com/file/d/0B6meUyeFIFA8N2VaX3FvNWYzWlU/edit)
 
-> 說個要訣：這不是要說服也不是討論，這是施壓。對方會試圖用各種旁支末節來分散焦點，建議直接打斷，把要說的說完就好。
+> 說個要訣：這不是要說服也不是討論，這是施壓。對方會試圖用各種旁支末節來分散焦點，建議直接打斷，把要說的說完就好。記住，立委是公僕，加油！
 
 ----
