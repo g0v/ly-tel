@@ -5,8 +5,8 @@
 
 "use strict";
 
+var dataCache;
 var url = "data/mly-8.json";
-var data_cache = undefined;
 
 var iso3166tw = {
     "CHA": "彰化縣",
@@ -36,7 +36,7 @@ var iso3166tw = {
     "LJF": "連江縣"
 }
 
-var constituency_parser = function (constituency) {
+var constituencyParser = function (constituency) {
     var result;
     switch (constituency[0]) {
     case 'proportional':
@@ -58,7 +58,7 @@ var constituency_parser = function (constituency) {
     }
 };
 
-var party_parser = function (party) {
+var partyParser = function (party) {
     switch (party) {
     case 'KMT':
         return '中國國民黨';
@@ -80,7 +80,7 @@ var party_parser = function (party) {
 };
 
 // function sortResults(prop, asc) {
-//     data_cache = data_cache.sort(function(a, b) {
+//     dataCache = dataCache.sort(function(a, b) {
 //         if (asc) return (a[prop] > b[prop]);
 //         else return (b[prop] > a[prop]);
 //     });
@@ -123,14 +123,14 @@ function showResults(){
     */
 
     var html = '';
-    $.each(data_cache, function (key, val) {
+    $.each(dataCache, function (key, val) {
         html += '<article class="row">';
         html +=   '<div class="col-xs-1">'
         html +=     '<img src="' + val['avatar'] + '" alt="' + val['name'] + '" class="img-circle">';
         html +=   '</div>'
         html +=   '<header class="col-xs-3">';
         html +=     '<h1>' + val['name'] + '</h1>';
-        html +=     '<h2><small>' + party_parser(val['party']) + '<br>' + constituency_parser(val['constituency']) + '</small></h2>';
+        html +=     '<h2><small>' + partyParser(val['party']) + '<br>' + constituencyParser(val['constituency']) + '</small></h2>';
         html +=   '</header>';
 
         var contact = val['contact'];
@@ -157,7 +157,7 @@ function showResults(){
 }
 
 $.getJSON(url, function (data) {
-    data_cache=data;
+    dataCache=data;
     showResults();
 });
 
