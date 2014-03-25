@@ -48,19 +48,6 @@ body,h1,h2,h3,h4,h5,h6,p,ul,ol{
   font-weight: bold;
 }
 
-
-#instructions.transparent{
-  opacity: 0;
-}
-
-#instructions-fixed-container{
-  position: fixed;
-  left: 0;
-  width: 100%;
-  bottom: 0;
-  pointer-events: none;
-}
-
 .copyright{
 text-align:center;
 font-size:13px;
@@ -78,7 +65,7 @@ line-height:1.4em;
   line-height: 1;
   letter-spacing: 1px;
   text-decoration: none;
-  color: #6d6c6c;
+  color: #FFF;
   padding-top: 23px;
 }
 #topbar .logo:hover {
@@ -122,6 +109,95 @@ line-height:1.4em;
   border: 1px solid rgba(217, 83, 79, 0.4);
   border-radius: 3px;
 }
+
+/* side bar */
+
+.sidebar {
+  margin-left: 42px;
+  margin-top: 20px;
+  float: left;
+  display: inline-block;
+  text-decoration: none;
+}
+.sidebar ul {
+  margin-bottom: 21px;
+}
+.sidebar li.title {
+  font-size: 18px;
+  padding-bottom: 3px;
+}
+.sidebar li.title .small {
+  font-size: 15px;
+  padding-left: 5px;
+}
+.sidebar li {
+  list-style-type: none;
+  font-size: 16px;
+}
+.sidebar li a {
+  color: black;
+}
+.sidebar li a:hover {
+  text-decoration: none;
+  color: red;
+}
+.sidebar li:not(.title) {
+  margin-left: 7px;
+  padding-top: 3px;
+}
+
+.sidebar.affix{
+  top: 0;
+}
+
+/* main */
+
+#main {
+  margin-top: 3em;
+  margin-left: 28em;
+  width: 51em;
+}
+/*main .head {
+  font-size: 50px;
+}
+main .head:before {
+  background-image: url(/images/logo/logo.png);
+  content: " ";
+  width: 31.799999999999997px;
+  height: 37.199999999999996px;
+  background-size: 31.799999999999997px 37.199999999999996px;
+  position: absolute;
+  margin-left: -37px;
+  margin-top: 13px;
+}
+main .content {
+  margin-bottom: 70px;
+}
+main .content .title {
+  padding-left: 17px;
+  margin-left: -30px;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+main .content .title:target {
+  margin-top: 50px;
+  border-left: 5px red solid;
+}
+main .content .intro {
+  font-size: 20px;
+  line-height: 1.5em;
+}
+main .md {
+  margin-left: 10px;
+}
+main .md h2 {
+  margin-left: -20px;
+}
+main .md p {
+  font-size: 17px;
+}*/
+
+
 
 /* footer */
 #footer {

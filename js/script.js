@@ -161,28 +161,7 @@ $.getJSON(url, function (data) {
     showResults();
 });
 
-var $instructions = $('#instructions'),
-    $instructionsFixed = $('#instructions-fixed-container'),
-    instructionFixed = false,
-    instructionTop = $instructions.offset().top;
-
-$(window).scroll(function(){
-    var scrollBottom = document.body.scrollTop + window.innerHeight,
-        instructionBottom = instructionTop + $instructions.outerHeight();
-
-    console.log(instructionBottom);
-
-    // Check if the screen reach the bottom of instructions
-    if(!instructionFixed && scrollBottom > instructionBottom){
-        instructionFixed = true;
-        $instructionsFixed.removeClass('hide');
-        $instructions.addClass('transparent');
-
-    }else if(instructionFixed && scrollBottom < instructionBottom){
-        instructionFixed = false;
-        $instructions.removeClass('transparent');
-        $instructionsFixed.addClass('hide');
-    }
+$('.sidebar').affix({
+    offset: {top: 60}
 });
-
 }(window, document, jQuery));
