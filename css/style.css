@@ -5,21 +5,19 @@ body,h1,h2,h3,h4,h5,h6,p,ul,ol{
 	margin:0px;
 	padding:0px;}
 #all-wrap{
-width:100%;
+  width:100%;
 	max-width:960px;
 	margin:auto;
 	padding:20px 0;
-	position:relative;}
-h1{
-font-size:28px;
-color:#5b3a7c;
-margin:0 0 7px 0;
-text-align:center;
-height:230px;
-background:url(../images/banner.jpg) no-repeat top center;
-text-indent:-3000px;
-overflow:hidden;}
+	position:relative;
+}
+
 .contact-list{
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
 	border-collapse:collapse;
 	border:3px solid #5b3a7c;
 	}
@@ -39,10 +37,9 @@ overflow:hidden;}
 .contact{
 	padding:4px;}
 .even td{
-	background:#e2d6ee;}
-#share{
-text-align:center;
-margin:0 0 20px 0;}
+	background:#e2d6ee;
+}
+
 .copyright{
 text-align:center;
 font-size:13px;
@@ -53,10 +50,10 @@ line-height:1.4em;
 #topbar {
   background: #3a3939;
   height: 67px;
-  text-align: right;
+  text-align: center;
 }
 #topbar .logo {
-  font-size: 21px;
+  font-size: 30px;
   line-height: 1;
   letter-spacing: 1px;
   text-decoration: none;
@@ -105,6 +102,7 @@ line-height:1.4em;
   border-radius: 3px;
 }
 
+/* footer */
 #footer {
   position: relative;
   background-color: #3a3939;
@@ -112,6 +110,11 @@ line-height:1.4em;
   height: 100px;
   overflow: hidden;
 }
+
+#footer a {
+  color: yellow;
+}
+
 #footer .copyright {
   line-height: 100px;
   margin: 0;
@@ -130,7 +133,7 @@ line-height:1.4em;
   text-shadow: none;
   background-color: transparent;
   border: 0;
-  background-image: url('/img/g0v.png');
+  background-image: url('/images/g0v.png');
   background-repeat: no-repeat;
   background-position: 50% 50%;
   width: 173px;
