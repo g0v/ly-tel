@@ -30,7 +30,24 @@ body,h1,h2,h3,h4,h5,h6,p,ul,ol{
 }
 
 #results article{
+  &:before{
+    display:block !important;
+  }
   padding: 0.5em 0;
+  div.col-xs-1{
+    img{
+      display:inline-block;
+    }
+  }
+  header{
+    width:80% !important;
+    h1{
+      width:50%;
+    }
+    h2{
+      width:50%;
+    }
+  }
 }
 
 #results article:nth-child(2n){
@@ -122,7 +139,7 @@ line-height:1.4em;
 #main {
 
   @media only screen and (min-width: 760px){
-    padding-left: 28em;
+    padding-left: 22em;
     margin-top: 3em;
   }
   // width: 51em;
