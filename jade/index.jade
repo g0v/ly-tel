@@ -5,8 +5,6 @@ html
     title 三動作護台灣 讓學生回家
     meta(name='description', content='三動作護台灣 讓學生回家')
     meta(name='keywords', content='三動作護台灣 讓學生回家')
-    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
-    script(src='js/script.js')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     link(href='css/style.css', rel='stylesheet', type='text/css')
     link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet', type='text/css')
@@ -17,26 +15,17 @@ html
     //
     .sidebar
       include ./switch
-    main
+
+    main#main
       include:md ../md/step.md
 
       h1#ly 立委列表
 
-      table#contact-list.contact-list(width='100%')
-        tr
-          th(width='8%')
-            b 頭像
-          th#name(width='12%')
-            b 姓名
-          th#party(width='14%')
-            b 政黨
-          th#constituency(width='16%')
-            b 選區
-          th(width='50%')
-            b 聯絡資料
-        tbody#results
-          //
-             this will be auto-populated 
+
+      #results
+        p.loading.text-center
+          img(src='images/loading.gif' alt='Loading...')
+
     footer#footer
       .container
         .row
@@ -54,13 +43,6 @@ html
           .col-xs-4
             a.g0v.pull-right(href='http://g0v.tw', target='_blank', title='g0v 零時政府') g0v
 
-  script.
-    var offset = $(".sidebar").offset();
-    var topPadding = 50;
-    $(window).scroll(function() {
-      if ($(window).scrollTop() > offset.top) {
-        $(".sidebar").css("margin-top", $(window).scrollTop() - offset.top + topPadding);
-      } else {
-        $(".sidebar").css("margin-top", 20);
-      };
-    });
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+    script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
+    script(src='js/script.js')

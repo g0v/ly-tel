@@ -12,32 +12,40 @@ body,h1,h2,h3,h4,h5,h6,p,ul,ol{
 	position:relative;
 }
 
-.contact-list{
-  width: 90%;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
-	border-collapse:collapse;
-	border:3px solid #5b3a7c;
-	}
-.contact-list th{
-	background:#865fad;
-	color:#fff;
-	font-size:18px;
-	padding:4px;}
-.contact-list td,.contact-list th{
-	border:1px solid #5b3a7c;
-	}
-.contact-list td{
-	text-align:center;
-	font-size:16px;}
-.contact-list td.tleft{
-	text-align:left;}
-.contact{
-	padding:4px;}
-.even td{
-	background:#e2d6ee;
+.loading{
+  margin: 5em 0;
+}
+
+#results h1{
+  font-size: 22px;
+  line-height: 1.5;
+  margin: 0;
+}
+#results h2{
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0.5em 0;
+}
+
+#results article{
+  padding: 0.5em 0;
+}
+
+#results article:nth-child(2n){
+  background: #eee;
+}
+
+#results .contact{
+  margin-top: 0.5em;
+}
+#results .contact:first-child{
+  margin-top: 0em;
+}
+#results .contact h3{
+  margin-top: 0;
+  font-size: 14px;
+  margin-bottom: 0.5em;
+  font-weight: bold;
 }
 
 .copyright{
@@ -138,14 +146,18 @@ line-height:1.4em;
   padding-top: 3px;
 }
 
+.sidebar.affix{
+  top: 0;
+}
+
 /* main */
 
-main {
+#main {
   margin-top: 3em;
   margin-left: 28em;
   width: 51em;
 }
-main .head {
+/*main .head {
   font-size: 50px;
 }
 main .head:before {
@@ -183,7 +195,7 @@ main .md h2 {
 }
 main .md p {
   font-size: 17px;
-}
+}*/
 
 
 
