@@ -4,6 +4,8 @@ call ly for help.
 
 ## Develop
 
+You shouldn't modify html file manully, modify jade (in jade folder) and use gulp to generate the html code.
+
 ```
 $ npm install
 ```
