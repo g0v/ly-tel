@@ -1,0 +1,49 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    title 三動作護台灣 讓學生回家
+    meta(name='description', content='三動作護台灣 讓學生回家')
+    meta(name='keywords', content='三動作護台灣 讓學生回家')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+    script(src='js/script.js')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(href='css/style.css', rel='stylesheet', type='text/css')
+    link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+  body
+    #topbar
+      .container.center
+        a.hidden-xs.logo(href='/') 三動作護台灣 讓學生回家
+    //
+       Button END 
+    table#contact-list.contact-list(width='100%')
+      tr
+        th(width='8%')
+          b 頭像
+        th#name(width='12%')
+          b 姓名
+        th#party(width='14%')
+          b 政黨
+        th#constituency(width='16%')
+          b 選區
+        th(width='50%')
+          b 聯絡資料
+      tbody#results
+        //
+           this will be auto-populated 
+    footer#footer
+      .container
+        .row
+          .col-xs-8
+            p.copyright
+              img(src='/images/cc.png')
+              span
+                | 本服務圖文內容採用
+                a(href='http://creativecommons.org/licenses/by/4.0/deed.zh_TW', rel='license') 創用 CC 姓名標示 4.0 國際授權條款
+                | 授權；
+                br
+                | 程式碼部分以
+                a(href='http://opensource.org/licenses/mit-license.php', rel='license') MIT 授權條款
+                | （X11）授權。
+          .col-xs-4
+            a.g0v.pull-right(href='http://g0v.tw', target='_blank', title='g0v 零時政府') g0v
