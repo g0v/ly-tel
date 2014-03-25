@@ -1,0 +1,57 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title 三動作護台灣
+    meta(name='description', content='三動作護台灣')
+    meta(name='keywords', content='三動作護台灣')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(href='css/style.css', rel='stylesheet', type='text/css')
+    link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+  body
+    #topbar
+      .container.center
+        .topbar-content
+          a.logo.centered(href='/') 三動作護台灣
+    //
+    .sidebar
+      include ./switch
+
+    main#main.container
+      include:md ../md/step.md
+
+      h1#ly 立委列表
+
+
+      #results
+        p.loading.text-center
+          img(src='images/loading.gif' alt='Loading...')
+
+    footer#footer
+      .container
+        .row
+          .col-xs-8
+            p.copyright
+              img(src='/images/cc.png')
+              span
+                | 本服務圖文內容採用
+                a(href='http://creativecommons.org/licenses/by/4.0/deed.zh_TW', rel='license', target="_blank") 創用 CC 姓名標示 4.0 國際授權條款
+                | 授權；
+                br
+                | 程式碼部分以
+                a(href='http://github.com/chilijung/ly-tel', target="_blank") MIT 授權條款
+                | （X11）授權。
+          .col-xs-4
+            a.g0v.pull-right(href='http://g0v.tw', target='_blank', title='g0v 零時政府') g0v
+
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+    script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
+    script(src='js/script.js')
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-38980669-2', 'lijung.com');
+      ga('send', 'pageview');
+
