@@ -82,6 +82,16 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
 
 #results article {
   padding: 0.5em 0; }
+  #results article:before {
+    display: block !important; }
+  #results article div.col-xs-1 img {
+    display: inline-block; }
+  #results article header {
+    width: 80% !important; }
+    #results article header h1 {
+      width: 50%; }
+    #results article header h2 {
+      width: 50%; }
 
 #results article:nth-child(2n) {
   background: #eee; }
@@ -165,7 +175,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
 /* main */
 @media only screen and (min-width: 760px) {
   #main {
-    padding-left: 28em;
+    padding-left: 22em;
     margin-top: 3em; } }
 
 /*main .head {
