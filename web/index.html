@@ -24,19 +24,19 @@
         <img src="images/weibo.png"></a>
     </div>
     <!-- Button END -->
-    <label>搜尋<input ng-model="query"></label>
+    <label>搜尋姓名<input ng-model="query"></label>
     <table width="100%" class="contact-list" id="contact-list">
       <thead>
         <tr>
           <th width="8%"><b>頭像</b></th>
-          <th width="12%" id="name"><b>姓名</b></th>
-          <th width="14%" id="party"><b>政黨</b></th>
-          <th width="16%" id="constituency"><b>選區</b></th>
+          <th width="12%" id="name" ng-click="orderProp = 'name'"><b>姓名</b></th>
+          <th width="14%" id="party" ng-click="orderProp = 'party'"><b>政黨</b></th>
+          <th width="16%" id="constituency" ng-click="orderProp = 'constituency'"><b>選區</b></th>
           <th width="50%"><b>聯絡資料</b></th>
         </tr>
       </thead>
       <tbody id="results">
-        <tr ng-repeat="ly in lyList | filter:query">
+        <tr ng-repeat="ly in lyList | filter:query | orderBy:orderProp">
           <td><img width="32" height="32" alt="{{ly.name}}" ng-src="{{ly.avatar}}"></td>
           <td>{{ly.name}}</td>
           <td>{{ly.party | partyName}}</td>

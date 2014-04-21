@@ -4,6 +4,7 @@ app.controller('LyListCtrl', function ($scope, $http) {
   $http.get('data/mly-8.json').success(function (data) {
     $scope.lyList = data;
   });
+  $scope.orderProp = 'name';
 });
 
 app.filter('partyName', function () {
