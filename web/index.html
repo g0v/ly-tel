@@ -25,6 +25,7 @@
         <img src="images/weibo.png"></a>
     </div>
     <!-- Button END -->
+    <label>搜尋<input ng-model="query"></label>
     <table width="100%" class="contact-list" id="contact-list">
       <thead>
         <tr>
@@ -36,7 +37,7 @@
         </tr>
       </thead>
       <tbody id="results">
-        <tr ng-repeat="ly in lyList">
+        <tr ng-repeat="ly in lyList | filter:query">
           <td><img width="32" height="32" alt="{{ly.name}}" src="{{ly.avatar}}"></td>
           <td>{{ly.name}}</td>
           <td>{{ly.party | partyName}}</td>
