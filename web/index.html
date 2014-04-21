@@ -37,7 +37,7 @@
       </thead>
       <tbody id="results">
         <tr ng-repeat="ly in lyList | filter:query">
-          <td><img width="32" height="32" alt="{{ly.name}}" src="{{ly.avatar}}"></td>
+          <td><img width="32" height="32" alt="{{ly.name}}" ng-src="{{ly.avatar}}"></td>
           <td>{{ly.name}}</td>
           <td>{{ly.party | partyName}}</td>
           <td>{{ly.constituency | constituencyName}}</td>
