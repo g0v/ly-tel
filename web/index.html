@@ -1,17 +1,18 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="lyTelApp">
 <head>
   <meta charset="utf-8">
   <title>立委聯絡資訊</title>
   <meta name="description" content="話筒式的公共參與：聯絡你的立委，表示你的意見。">
   <meta name="keywords" content="立委聯絡資訊,立委電話簿">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="js/script.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="css/style.css" rel="stylesheet" type="text/css">
   <link href="images/banner.jpg" rel="image_src" type="image/jpeg">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+  <script src="js/app.js"></script>
 </head>
-<body>
+<body ng-controller="LyListCtrl">
   <div id="all-wrap">
     <h1>立委聯絡資訊</h1>
     <!-- Button BEGIN -->
@@ -35,12 +36,19 @@
         </tr>
       </thead>
       <tbody id="results">
-        <tr>
-          <td><img width="32" height="32" alt="丁守中" src="http://avatars.io/50a65bb26e293122b0000073/36f800ccfad1a8429e795874b135b969"></td>
-          <td>丁守中</td>
-          <td>中國國民黨</td>
-          <td>台北市第1選區</td>
-          <td class="tleft"><div class="contact"><strong>國會研究室</strong><br>電話：<a href="tel:02-2358-6706">02-2358-6706</a><br>地址：<a href="http://maps.google.com.tw/?q=10051臺北市中正區濟南路1段3-1號0707室">10051臺北市中正區濟南路1段3-1號0707室</a><br>傳真：<a href="fax:02-2358-6710">02-2358-6710</a></div><div class="contact"><strong>北投服務處</strong><br>電話：<a href="tel:02-2828-7789">02-2828-7789</a><br>地址：<a href="http://maps.google.com.tw/?q=11262臺北市北投區承德路七段188巷2號1樓">11262臺北市北投區承德路七段188巷2號1樓</a><br>傳真：<a href="fax:02-2828-6877">02-2828-6877</a></div></td>
+        <tr ng-repeat="ly in lyList">
+          <td><img width="32" height="32" alt="{{ly.name}}" src="{{ly.avatar}}"></td>
+          <td>{{ly.name}}</td>
+          <td>{{ly.party | partyName}}</td>
+          <td>{{ly.constituency | constituencyName}}</td>
+          <td class="tleft">
+            <div class="contact" ng-repeat="(place, contact) in ly.contact">
+              <strong>{{place}}</strong><br>
+              <span ng-show="contact.phone">電話：<a href="tel:{{contact.phone}}">{{contact.phone}}</a></span><br>
+              <span ng-show="contact.address">地址：<a href="http://maps.google.com.tw/?q={{contact.address}}">{{contact.address}}</a></span><br>
+              <span ng-show="cantact.fax">傳真：<a href="fax:{{contact.fax}}">{{contact.fax}}</span></a>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
