@@ -1,6 +1,6 @@
 //var url = "https://raw.github.com/g0v/twlyparser/master/data/mly-8.json";
 //sortable table solution: http://jsfiddle.net/VAKrE/105/
-var url = "data/mly-8.json";
+var url = "data/mly-9.json";
 var data_cache = undefined;
 
 iso3166tw = {
@@ -13,21 +13,23 @@ iso3166tw = {
     "ILA": "宜蘭縣",
     "KEE": "基隆市",
     "KHH": "高雄市",
-    "KHQ": "高雄市",
+    "KHQ": "高雄縣",
     "MIA": "苗栗縣",
     "NAN": "南投縣",
     "PEN": "澎湖縣",
     "PIF": "屏東縣",
-    "TAO": "桃園縣",
+    "TAO": "桃園市",
     "TNN": "台南市",
-    "TNQ": "台南市",
+    "TNQ": "台南縣",
     "TPE": "台北市",
     "TPQ": "新北市",
     "TTT": "台東縣",
     "TXG": "台中市",
-    "TXQ": "台中市",
+    "TXQ": "台中縣",
     "YUN": "雲林縣",
     "JME": "金門縣",
+    "KIN": "金門縣",
+    "LIE": "連江縣",
     "LJF": "連江縣"
 }
 
@@ -74,6 +76,12 @@ var party_parser = function (party) {
     case 'NSU':
         return '無黨團結聯盟';
         break;
+    case 'MKT':
+        return '民國黨';
+        break;
+    case 'NPP':
+        return '時代力量';
+        break;
     default:
         if (party === null){
             return '無黨籍';
@@ -117,16 +125,16 @@ $(function() {
         var id = $(this).attr('id');
         if(id ==undefined) return;
         var asc = (!$(this).attr('asc')); // switch the order, true if not set
-        
+
         // set asc="asc" when sorted in ascending order
         $('#contact-list th').each(function() {
             $(this).removeAttr('asc');
         });
         if (asc) $(this).attr('asc', 'asc');
-        
+
         sortResults(id, asc);
     });
-        
+
     //showResults();
 });
 
@@ -139,16 +147,17 @@ function showResults(){
         } else {
             var html = '<tr class="even">';
         }
-        html = html + '<td><img src="' + val['avatar'] + '" alt="' + val['name'] + '" width="32" height="32"></td>';
+        var avatar_url = "https://cic.tw/images/legislators/160x214/" + val['id'] + ".jpg"
+        html = html + '<td><img src="' + avatar_url + '" alt="' + val['name'] + '" width="160" height="214"></td>';
         html = html + '<td>' + val['name'] + '</td>';
         html = html + '<td>' + party_parser(val['party']) + '</td>';
         html = html + '<td>' + constituency_parser(val['constituency']) + '</td>';
-        var contact = val['contact'];
+        var contacts = val['contacts'];
         html = html + '<td class="tleft">';
-        $.each(contact, function (key, val) {
-            key = $.trim(key);
-            if(key){
-                html = html + '<div class="contact"><strong>' + key + '</strong><br>';
+        $.each(contacts, function (key, val) {
+            var name = $.trim(val['name']);
+            if(name){
+                html = html + '<div class="contact"><strong>' + name + '</strong><br>';
                 if (val['phone'] != undefined){
                     html = html + '電話：<a href="tel:' + val['phone'] + '">' + val['phone'] + '</a><br>';
                 }
