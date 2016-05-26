@@ -86,8 +86,28 @@ var party_parser = function (party) {
 
 function sortResults(prop, asc) {
     data_cache = data_cache.sort(function(a, b) {
-        if (asc) return (a[prop] > b[prop]);
-        else return (b[prop] > a[prop]);
+        var val_1, val_2;
+        if(!asc){
+            a=[b, b=a][0];
+	};
+        if(prop=="constituency"){
+           val_1=a.constituency.join();
+           val_2=b.constituency.join();
+        }else{
+            val_1=a[prop]==null?"":a[prop];
+            val_2=b[prop]==null?"":b[prop];
+        }
+        if( val_1 == val_2){
+            if(a.avatar > b.avatar){
+                return 1;
+            }else{
+                return -1;
+            }
+        }else if(val_1 > val_2){
+            return 1;
+        }else{
+            return -1;
+        }
     });
     showResults();
 }
@@ -95,6 +115,7 @@ function sortResults(prop, asc) {
 $(function() {
     $('#contact-list th').click(function() {
         var id = $(this).attr('id');
+        if(id ==undefined) return;
         var asc = (!$(this).attr('asc')); // switch the order, true if not set
         
         // set asc="asc" when sorted in ascending order
