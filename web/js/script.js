@@ -23,6 +23,7 @@ iso3166tw = {
     "TNQ": "台南縣",
     "TPE": "台北市",
     "TPQ": "新北市",
+    "NWT": "新北市",
     "TTT": "台東縣",
     "TXG": "台中市",
     "TXQ": "台中縣",
@@ -122,7 +123,7 @@ function sortResults(prop, asc) {
 
 $(function() {
     $('#contact-list th').click(function() {
-        var id = $(this).attr('id');
+        var id = $(this).attr('uid');
         if(id ==undefined) return;
         var asc = (!$(this).attr('asc')); // switch the order, true if not set
 
@@ -141,45 +142,48 @@ $(function() {
 function showResults(){
     $('#results').html('');
     var num = 0;
+    var today = new Date();
     $.each(data_cache, function (key, val) {
-        if ((num % 2) == 0) {
-            var html = '<tr>';
-        } else {
-            var html = '<tr class="even">';
-        }
-        var avatar_url = "https://cic.tw/images/legislators/160x214/" + val['id'] + ".jpg"
-        html = html + '<td><img src="' + avatar_url + '" alt="' + val['name'] + '" width="160" height="214"></td>';
-        html = html + '<td>' + val['name'] + '</td>';
-        html = html + '<td>' + party_parser(val['party']) + '</td>';
-        html = html + '<td>' + constituency_parser(val['constituency']) + '</td>';
-        var contacts = val['contacts'];
-        html = html + '<td class="tleft">';
-        $.each(contacts, function (key, val) {
-            var name = $.trim(val['name']);
-            if(name){
-                html = html + '<div class="contact"><strong>' + name + '</strong><br>';
-                if (val['phone'] != undefined){
-                    html = html + '電話：<a href="tel:' + val['phone'] + '">' + val['phone'] + '</a><br>';
-                }
-                if (val['address'] != undefined){
-                    html = html + '地址：<a href="http://maps.google.com.tw/?q=' + val['address'] + '">' + val['address'] + '</a>';
-                }
-                if (val['fax'] != undefined){
-                    html = html + '<br>傳真：<a href="fax:' + val['fax'] + '">' + val['fax'] + '</a>';
-                }
-                html = html + '</div>';
+        if (new Date(val['term_end']['date']) > today) {
+            if ((num % 2) == 0) {
+                var html = '<tr>';
+            } else {
+                var html = '<tr class="even">';
             }
-        });
-        html = html + '</td><tr>';
-        num = num + 1;
-        //console.log(html);
-        $('#results').append(html);
+            var avatar_url = "https://cic.tw/images/legislators/160x214/" + val['uid'] + ".jpg"
+            html = html + '<td><img src="' + avatar_url + '" alt="' + val['name'] + '" width="160" height="214"></td>';
+            html = html + '<td>' + val['name'] + '</td>';
+            html = html + '<td>' + party_parser(val['party']) + '</td>';
+            html = html + '<td>' + constituency_parser(val['constituency']) + '</td>';
+            var contacts = val['contacts'];
+            html = html + '<td class="tleft">';
+            $.each(contacts, function (key, val) {
+                var name = $.trim(val['name']);
+                if(name){
+                    html = html + '<div class="contact"><strong>' + name + '</strong><br>';
+                    if (val['phone'] != undefined){
+                        html = html + '電話：<a href="tel:' + val['phone'] + '">' + val['phone'] + '</a><br>';
+                    }
+                    if (val['address'] != undefined){
+                        html = html + '地址：<a href="http://maps.google.com.tw/?q=' + val['address'] + '">' + val['address'] + '</a>';
+                    }
+                    if (val['fax'] != undefined){
+                        html = html + '<br>傳真：<a href="fax:' + val['fax'] + '">' + val['fax'] + '</a>';
+                    }
+                    html = html + '</div>';
+                }
+            });
+            html = html + '</td><tr>';
+            num = num + 1;
+            //console.log(html);
+            $('#results').append(html);
+        }
     });
 
 }
 
 $.getJSON(url, function (data) {
     //console.log(data);
-    data_cache=data;
+    data_cache = data;
     showResults();
 });
