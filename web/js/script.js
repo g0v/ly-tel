@@ -144,13 +144,13 @@ function showResults(){
     var num = 0;
     var today = new Date();
     $.each(data_cache, function (key, val) {
-        if (new Date(val['term_end']['date']) > today) {
+        if (!val['term_end'] || new Date(val['term_end']['date']) > today) {
             if ((num % 2) == 0) {
                 var html = '<tr>';
             } else {
                 var html = '<tr class="even">';
             }
-            var avatar_url = "https://cic.tw/images/legislators/160x214/" + val['uid'] + ".jpg"
+            var avatar_url = "images/legislators/" + val['uid'] + ".jpg"
             html = html + '<td><img src="' + avatar_url + '" alt="' + val['name'] + '" width="160" height="214"></td>';
             html = html + '<td>' + val['name'] + '</td>';
             html = html + '<td>' + party_parser(val['party']) + '</td>';
