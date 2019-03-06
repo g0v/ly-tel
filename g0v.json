@@ -8,7 +8,7 @@
   "name": "ly-tel",
   "name_zh": "立委聯絡資料",
   "description": "Public participation in tele-form",
-  "description_zh": "話筒式的公共參與",
+  "description_zh": "話筒式的公共參與：對公共議題有想法嗎？快來翻出自己選區的民代，call in表達你的聲音!",
   "homepage": "http://billy3321.github.io/lytel/",
   "document": "",
   "repository": {
@@ -34,7 +34,7 @@
   "projects": [
     "ly"
   ],
-  "thumbnail": "http://billy3321.github.io/lytel/banner_s.jpg",
+  "thumbnail": "https://raw.githubusercontent.com/g0v/ly-tel/master/web/images/banner_s.jpg",
   "needs": [
     "designer",
     "programmer",
