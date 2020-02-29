@@ -1,6 +1,6 @@
-//var url = "https://raw.github.com/g0v/twlyparser/master/data/mly-8.json";
+//var url = "https://raw.github.com/g0v/ruby_twly_crawler/master/data/mly-10.json";
 //sortable table solution: http://jsfiddle.net/VAKrE/105/
-var url = "data/mly-9.json";
+var url = "data/mly-10.json";
 var data_cache = undefined;
 
 iso3166tw = {
